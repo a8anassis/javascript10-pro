@@ -5,8 +5,9 @@ console.log("Boolean(0)" + Boolean(0))
 console.log("Boolean('')" + Boolean(''))
 console.log("Boolean('Hello')" + Boolean('Hello'))
 
-// Loop Conditions - Iterations
+// Loop Conditions - Iterations - Coercions
 while (1) {
+    console.log("In WHILE")
     break;
 }
 
