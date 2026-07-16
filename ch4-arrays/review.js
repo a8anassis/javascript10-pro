@@ -67,3 +67,8 @@ function equalArrays(arr1, arr2) {
     }
     return true
 }
+
+console.log(equalArrays([1, 2, 3, 3], [1, 2, 3, 4]))
+
+// Άσκηση 4
+// 
