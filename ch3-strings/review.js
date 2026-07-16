@@ -120,3 +120,15 @@ function wordCount2(text, str) {
 // Μία συνάρτηση που παίρνει ως είσοδο τον αριθμό κάρτας
 // π.χ. '1234 5678 2345 6543' και επιστρέφει masked όλα τα ψηφία
 // εκτός από τα 4 τελευταία, π.χ. ************6543
+
+function maskCardNumber(cardNumber) {
+    if (!cardNumber.trim()) return
+
+    const digits = cardNumber.trim().split(' ').join('')
+    const lastFourDigits = digits.slice(-4)
+    const masked = '*'.repeat(digits.length - 4)
+
+    return masked + lastFourDigits
+}
+
+console.log(maskCardNumber('1234 5678 2345 6543'))
