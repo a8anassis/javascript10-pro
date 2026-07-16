@@ -62,3 +62,27 @@ function countVowels(str) {
 }
 
 console.log(countVowels('Javascript'))
+
+// Άσκηση 4
+// Μία συνάρτηση που παίρνει ως είσοδο μία πρόταση
+// και να επιστρέφει την ίδια πρόταση αλλά με το
+// πρώτο γράμμα κάθε λέξης κεφαλαίο και τα υπόλοιπα πεζά
+// και ένα κενό κενό μεταξύ των λέξεων
+// 'codING   faCtory'  -> 'Coding Factory' 
+
+function capitalize(str) {
+    if (!str.trim()) return ''
+    
+    let returnedSentence = ''
+    const tokens = str.trim().split(/\s+/)
+
+    for (const token of tokens) {
+        const newToken1 = token[0].toUpperCase()
+        const newToken2 = token.slice(1).toLowerCase()
+        returnedSentence += newToken1 + newToken2 + ' '
+    }
+    return returnedSentence.trim()
+}
+
+console.log(capitalize('codING   faCtory'))
+
