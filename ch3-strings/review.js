@@ -86,3 +86,31 @@ function capitalize(str) {
 
 console.log(capitalize('codING   faCtory'))
 
+
+// Άσκηση 5
+// Μία συνάρτηση που παίρνει ένα κείμενο και
+// μία λέξη και επιστρέφει πόσες φορές εμφανίζεται
+// αυτή η λέξη μέσα στο κείμενο (ανεξαρτήτων πεζών/κεφαλαίων)
+
+function wordCount(text, str) {
+    if (!text.trim() || !str.trim()) return 0
+
+    const words = text.trim().toLowerCase().split(/\s+/)
+    const searchTerm = str.trim().toLowerCase()
+    let times = 0
+
+    for (const word of words) {
+        if (word === searchTerm) times++
+    }
+    return times;
+}
+
+
+function wordCount2(text, str) {
+    if (!text.trim() || !str.trim()) return 0
+
+    const pattern = new RegExp('\\b + str.trim() + \\b', 'gi')
+    const matches = text.match(pattern)
+
+    return matches === null ? 0 : matches.length
+}
