@@ -71,4 +71,11 @@ function equalArrays(arr1, arr2) {
 console.log(equalArrays([1, 2, 3, 3], [1, 2, 3, 4]))
 
 // Άσκηση 4
-// 
+// Μία συνάρτηση που λαμβάνει ως είσοδο 
+// ένα πίνακα και μία τιμή και επιστρέφει
+// ένα νέο πίνακα (ο αρχικός δεν αλλάζει) 
+// χωρίς να εμφανίζει την τιμή αυτή
+
+function removeAllOccurances(arr, valueToRemove) {
+    return arr.filter(value => value !== valueToRemove)
+}
