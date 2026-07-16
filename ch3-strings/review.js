@@ -39,5 +39,26 @@ function palindrome(str) {
 
 function palindrome2(str) {
     const reversed = str.trim().toUpperCase().split(/\s+/).reverse().join('')
-    return reversed === str.toUpperCase()
+    return reversed === str.trim().toUpperCase().split(/\s+/).join('')
 }
+
+
+// Άσκηση 3
+// Μία συνάρτηση που μετράει πόσα φωνήεντα
+// [a, e, i, 0, u] περιέχει ένα string, ανεξαρτήτως
+// κεφαλαίων / πεζών 
+
+function countVowels(str) {
+    const vowels = [...'aeiou']
+    let count = 0
+
+    for (const ch of str.toLowerCase()) {
+        if (vowels.includes(ch)) {
+            count++
+        }
+    }
+
+    return count;
+}
+
+console.log(countVowels('Javascript'))
