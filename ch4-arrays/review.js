@@ -102,3 +102,24 @@ function secondMax(arr) {
 
     return secondMax
 }
+
+function secondMAx2(arr) {
+    const uniqueNumbers = [...new Set(arr)]
+    uniqueNumbers.sort((a, b) => b - a)
+    return uniqueNumbers[1]
+}
+
+
+// Άσκηση 6
+// Μία συνάρτηση που να παίρνει ως είσοδο ένα πίνακα
+// και ένα θετικό offset και να κάνει αριστερό και κυκλικό
+// shift κατά offset θέσεις. [1, 2, 3] -> [2, 3, 1]
+function shiftLeft(arr, offset) {
+    let shiftedArr = []
+    const normalizedOffset = offset % arr.length;
+
+    for (let i = 0; i < arr.length; i++) {
+        shiftedArr[(i - normalizedOffset + arr.length) % arr.length] = arr[i]
+    }
+
+}
