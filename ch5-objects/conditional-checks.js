@@ -13,3 +13,7 @@ authorLast = book2?.author?.lastname        // returns undefined
 
 // Nullish coalescing operator -- elvis operator
 authorLast = book2?.author?.lastname ?? "Unknown"
+
+if (book.hasOwnProperty('author')) {
+    console.log(book.author)
+}
