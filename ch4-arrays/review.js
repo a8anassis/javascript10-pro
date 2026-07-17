@@ -79,3 +79,26 @@ console.log(equalArrays([1, 2, 3, 3], [1, 2, 3, 4]))
 function removeAllOccurances(arr, valueToRemove) {
     return arr.filter(value => value !== valueToRemove)
 }
+
+// Άσκηση 5
+// Μία συνάρτηση που βρίσκει το 2ο μεγαλύτερο αριθμό
+// ενός πίνακα. [7, 7, 4] ο 2ος μεγαλύτερος είναι το 4
+function secondMax(arr) {
+    if (!Array.isArray(arr) || arr.length < 2) {
+        return
+    }
+
+    let firstMax = -Infinity
+    let secondMax = -Infinity
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > firstMax) {
+            secondMax = firstMax
+            firstMax = arr[i]
+        } else if (arr[i] > secondMax && arr[i] !== firstMax) {
+            secondMax = arr[i]
+        }
+    }
+
+    return secondMax
+}
