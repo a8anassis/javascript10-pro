@@ -63,7 +63,7 @@ function sumValues2(obj) {
 }
 
 
-// Άσκηση
+// Άσκηση 3
 // Μία συνάρτηση που να εκτυπώνει τα key, value
 // ενός obj
 function printEntries(obj) {
@@ -76,5 +76,76 @@ function printEntries2(obj) {
     Object.entries(obj).forEach(([key, value]) => console.log(key + ":" + value))
 }
 
+// Άσκηση 4
+// Έστω το παρακάτω bankAccount obj. 
+// προσθέστε δύο μεθόδους: deposit και
+// withdraw
+const bankAccount = {
+    owner: "Alice",
+    balance: 500,
+    deposit(amount) {
+        if (amount < 0 ) return
+        this.balance += amount
+    },
+    withdraw(amount) {
+        if (amount > this.balance) return
+        this.balance -= amount
+    }
+}
+
+
+// Άσκηση 5
+// Μία συνάρτηση που να επιστρέφει το product
+// με το max price
+
+const products = [
+    { name: 'mouse', price: 50 },
+    { name: 'keyboard', price: 80 },
+    { name: 'cpu', price: 800 },
+]
+
+function findMostExpensive(products) {
+    if (!Array.isArray(products)) return
+    if (products.length === 0) return
+
+    let mostExpensive = products[0]
+
+    for (const product of products) {
+        if (product.price > mostExpensive.price) {
+            mostExpensive = product
+        }
+    }
+
+    return mostExpensive
+}
+
+
+// Έστω
+// Μία συνάρτηση που να επιστρέφει object
+// με γκρουπάρισμα ανά city των users
+ const users = [
+    { firstname: 'Alice', city: 'Athens'},
+    { firstname: 'Bob', city: 'Patra'},
+    { firstname: 'Costas', city: 'Athens'},
+    { firstname: 'Dimitris', city: 'Patra'},
+    { firstname: 'Elon', city: 'Athens'},
+    { firstname: 'Frank', city: 'Patra'},
+ ]
+
+ // { Athens: ['Alice', 'Costas', 'Elon'], Patra: ['Bob', 'Dimitris', 'Frank']  }
+
+ function groupByCity(users) {
+    const groups = {}
+
+    for (const user of users) {
+        if (!(user.city in groups)) {
+            groups[user.city] = []
+        }
+        groups[user.city].push(user.firstname)
+    }
+
+    return groups
+ }
+ 
 
 
