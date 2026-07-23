@@ -9,5 +9,7 @@ const user = {
     }
 }
 
+user.age = 50
+
 console.log(user.getFirstname())
 console.log(user.getFullname())
