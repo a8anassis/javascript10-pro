@@ -35,3 +35,25 @@ function createButton2(text, color = 'blue') {
 createButton2('Hello')          // Hello blue
 createButton2('Hello', 'red')   // Hello red
 createButton2('Hello', '')      // Hello
+
+
+// Rest parameters
+// let arr = [1, 2, 3, 4]
+// max(...arr)
+// max(1, 2, 4, 7)
+function max(...numbers) {                  // rest
+    // for (const num of numbers) {
+    //     // find max
+    // }
+    return Math.max(...numbers)             // spread
+}
+
+console.log(max(1, 2,8, 3, 23, 17))         // 23
+
+
+function calculateTotalPrice(discount, ...prices) {
+    const totalPrice = prices.reduce((sum, price) => sum + price, 0)
+    return totalPrice - discount
+}
+
+console.log(calculateTotalPrice(5, 10, 8, 30.7))
