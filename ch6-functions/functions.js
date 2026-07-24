@@ -57,3 +57,26 @@ function calculateTotalPrice(discount, ...prices) {
 }
 
 console.log(calculateTotalPrice(5, 10, 8, 30.7))
+
+
+// Sanity checks στα input params των συναρτήσεων
+// έχουν νόημα μόνο αν public APIs, κλπ external data
+const user = {
+    id: 1,
+    firstname: 'Alice',
+    lastname: 'W.',
+    hobbies: ['reading']
+}
+
+// Legacy
+function getFirstHobby(user) {
+    if (!(user && user.hobbies && Array.isArray(user.hobbies) && user.hobbies.length > 0)) {
+        return
+    }
+    return user.hobbies[0]
+}
+
+// Modern way
+function getFirstHobby2(user) {
+    return user?.hobbies?.[0] ?? 'no hobbies'
+}
