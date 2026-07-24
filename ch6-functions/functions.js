@@ -103,4 +103,16 @@ const cube = (n) => {
 const createUser = (username, role) => ({ usename: username, role: role})
 
 
+// Hoisting
+console.log(hello('Alice'))
+
+// Hoisting
+function hello(name) {
+    return `Hello ${name}`
+}
+
+console.log(hello2('Bob'))
+const hello2 = (name) => `Hello ${name}`
+
+
 
