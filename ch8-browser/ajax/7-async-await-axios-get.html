@@ -6,10 +6,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Async-await with Fetch API Get</title>
+    <title>Async await axios get</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.20.0/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>Uses async await with Fetch API to get data</h1>
+    <h1>Uses async await with axios to get data</h1>
     <button
       id="btn"
       type="button"
@@ -21,15 +22,13 @@
     <script>
       document.getElementById("btn").addEventListener("click", async () => {
         try {
-          let response = await fetch(
+          let response = await axios.get(
             "https://jsonplaceholder.typicode.com/posts/1",
           );
-          if (!response.ok) throw new Error("Invalid response");
-          let data = await response.json();
-          document.getElementById("output").textContent =
-            `Title: ${data.title}`;
+          document.getElementById("output").innerHTML =
+            `Title: ${response.data.title} <br><br> ${response.data.body} `;
         } catch (error) {
-          console.error("Fetch error", error);
+          console.error("Error: ", error);
           document.getElementById("output").textContent = "Error fetching data";
         }
       });
